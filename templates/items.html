@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+
+  <title>Books categories</title>
+</head>
+<body>
+  <!--header-->
+  <div class="header">
+    <a href="/" style="text-decoration:none;color:white;"><span class="header-content"><strong>Book</strong>Category.com</span></a>
+    {%if 'username' not in session%}
+      <a href="/login"class="button" id="login-button">login</a>
+      {%else%}
+        <a href="/logout"class="button" id="login-button">logout</a>
+      {%endif%}
+  </div>
+  <!-- Side navigation -->
+  <div class="sidenav">
+    {% for category in categories %}
+    <a href="{{url_for('showBooks', category_id = category.id)}}">{{category.name}}</a>
+    {% endfor %}
+  </div>
+
+  <!-- Page content -->
+  <div class="main">
+    <h2 class="title">{{category.name}} books</h2><br>
+    <a class="button" id='add-button' href="{{url_for('newBook', category_id = category.id)}}"> Add a book</a><br><br>
+    <div class="items">
+      {%for item in items%}
+      <div id="item-block">
+        <a class="item" href="{{url_for('showBookInfo', category_id=category.id,item_id=item.id)}}">{{item.name}}</a><br>
+      </div>
+      {%endfor%}
+    </div>
+ </div>
+
+</body>
+</html>

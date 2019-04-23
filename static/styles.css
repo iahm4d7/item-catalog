@@ -1,0 +1,155 @@
+
+body {
+  font-family: "Lato", sans-serif;
+  margin-top: 0px;
+  max-resolution: 0px;
+  background-color: #1a000d;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0px;
+  padding: 3px;
+  padding-left: 0px;
+  text-align: left;
+  align-content: center;
+  background: #660033;
+  color: white;
+  font-size: 30px;
+}
+.header a{
+  text-decoration:none;
+  color:white
+}
+.main{
+  margin-top: 10px;
+  padding-top: 37px;
+  background-color: #111;
+  padding-left: 170px;
+  padding-bottom: 10px;
+  color: white;
+}
+#newitem-main{
+  padding-left: 15px;
+}
+
+.header-content strong {
+  background-color: white;
+  color: #660033;
+  padding: 0px 6px;
+  margin-right: 2px;
+}
+
+.title{
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+  margin-top: 0px;
+  border-bottom: 1px solid white;
+  padding-bottom:10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  left: 0;
+  background-color: #262626;
+  padding-top: 20px;
+  margin: 33px 0px;
+
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #e6e600;
+  font-size: 18px;
+}
+
+.item {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 7px;
+  transition: 0.3s;
+}
+
+.item:hover {
+  color: #660033;
+}
+
+#item-block{
+  padding: 5px 0px;
+
+}
+
+.description {
+  color: white;
+}
+
+.buttons {
+    margin-top: 20px;
+
+}
+
+#login-button {
+  float: right;
+  margin-right: 30px;
+  margin-top: 1.6px;
+}
+
+.form-group {
+  margin-top: 10px;
+
+}
+.button {
+  background-color: #660033;
+  border: none;
+  margin-top: 10px;
+  font-size: 16px;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer
+}
+
+.button:hover {
+   opacity: 1;
+}
+
+
+.items {
+  max-height: 100%;
+  font-size: 13px; /* Increased text to enable scrolling */
+  color: white;
+  padding: 0px 10px;
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-flow: column wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-flow: column wrap;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

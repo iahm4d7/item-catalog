@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+
+    <title>Books categories</title>
+  </head>
+  <body>
+
+
+    <div class="header">
+      <a href="/" style="text-decoration:none;color:white;"><span class="header-content"><strong>Book</strong>Category.com</span></a>
+      {%if 'username' not in session%}
+        <a href="/login"class="button" id="login-button">login</a>
+        {%else%}
+          <a href="/logout"class="button" id="login-button">logout</a>
+        {%endif%}
+    </div>
+
+      <!-- Side navigation -->
+
+      <!-- Page content -->
+      <div class="main" id="newitem-main">
+        <h2 class="title">Are you sure you want to delete {{book.name}}?</h2>
+        <div class="item-content">
+          <form action="#" method = "post">
+              <div class="form-group">
+                <button type="submit" class="button" id="submit">
+              	<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+                <a href="{{url_for('showBooks', category_id=book.category_id)}}"class="button">Cancel</a>
+              </div>
+          </form>
+        </div>
+     </div>
+
+  </body>
+</html>

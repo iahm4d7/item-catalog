@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+
+    <title>Books categories</title>
+  </head>
+  <body>
+
+
+    <div class="header">
+      <a href="/" style="text-decoration:none;color:white;"><span class="header-content"><strong>Book</strong>Category.com</span></a>
+      {%if 'username' not in session%}
+        <a href="/login"class="button" id="login-button">login</a>
+        {%else%}
+          <a href="/logout"class="button" id="login-button">logout</a>
+        {%endif%}
+    </div>
+
+      <!-- Side navigation -->
+      <div class="sidenav">
+        {% for item in items %}
+        <a href="{{url_for('showBookInfo', category_id = category.id,item_id=item.id)}}">{{item.name}}</a>
+        {% endfor %}
+
+      </div>
+
+      <!-- Page content -->
+      <div class="main">
+        <a href="{{url_for('showBooks', category_id = category.id)}}" class="title">{{category.name}} books</a>
+        <div class="item-content">
+          <h3>{{item.name}}</h3>
+          <div class="description">
+            {%if not item.description%}
+            There is no description available. Click edit to add one.
+            {%else%}
+            description: {{item.description}}
+            {%endif%}
+          </div>
+        </div>
+        <div class='buttons'>
+          <a class="button" href="{{url_for('editBook', category_id=category.id, item_id=item.id)}}">Edit</a>
+          <a class="button" href="{{url_for('deleteBook', category_id=category.id, item_id=item.id)}}">Delete</a>
+        </div>
+     </div>
+
+  </body>
+</html>
